@@ -1,17 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config) => {
-    if (process.env.NODE_ENV === "development") {
-      config.module.rules.push({
-        test: /\.(jsx|tsx)$/,
-        exclude: /node_modules/,
-        enforce: "pre",
-        use: "@dyad-sh/nextjs-webpack-component-tagger",
-      });
-    }
-    return config;
-  },
+  // Empty config works best with Next.js 15 on Vercel
 };
 
 export default nextConfig;
